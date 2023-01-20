@@ -1,6 +1,6 @@
 # Unsupervised-Decision-Trees
 
-Data to support our paper titled: "Decision Tree Ensembles Utilizing Multivariate Splits Are Effective at Investigating Beta-Diversity in Medically Relevant 16S Amplicon Sequencing Data"
+Data and code to support our paper titled: "Decision Tree Ensembles Utilizing Multivariate Splits Are Effective at Investigating Beta-Diversity in Medically Relevant 16S Amplicon Sequencing Data"
 https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
 
 # Create the Environment
