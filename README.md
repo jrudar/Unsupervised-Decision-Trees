@@ -4,36 +4,29 @@ Data to support our paper titled: "Decision Tree Ensembles Utilizing Multivariat
 https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
 
 # Create the Environment
-  `
-  conda create -n TreeOrdFinal python=3.10
+    conda create -n TreeOrdFinal python=3.10
 
-  # Activate the Environment
-  conda activate TreeOrdFinal
-
-  # Install LANDMark
-  git clone https://github.com/jrudar/LANDMark
-  cd LANDMark
-  python setup.py sdist
-  cd dist
-  pip install LANDMark-1.2.0.tar.gz
-
-  # Install TreeOrdination
-  pip install cython
-  cd ..
-  cd ..
-  git clone https://github.com/jrudar/TreeOrdination
-  cd TreeOrdination
-  python setup.py sdist
-  cd dist
-  pip install TreeOrdination-1.0.2.tar.gz
-
-
-  # Install Other Packages Which Are Needed
-  pip install statsmodels==0.13.5
-  pip install statannotations==0.5
-  pip install matplotlib==3.5.2
-  pip install seaborn==0.11.2
-  `
+    conda activate TreeOrdFinal
+        
+    git clone https://github.com/jrudar/LANDMark
+    cd LANDMark
+    python setup.py sdist
+    cd dist
+    pip install LANDMark-1.2.0.tar.gz
+        
+    pip install cython
+    cd ..
+    cd ..
+    git clone https://github.com/jrudar/TreeOrdination
+    cd TreeOrdination
+    python setup.py sdist
+    cd dist
+    pip install TreeOrdination-1.0.2.tar.gz
+        
+    pip install statsmodels==0.13.5
+    pip install statannotations==0.5
+    pip install matplotlib==3.5.2
+    pip install seaborn==0.11.2
 
 # Data Sources
 
