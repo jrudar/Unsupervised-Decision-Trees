@@ -9,9 +9,9 @@ Forbes JD, Chen C-Y, Knox NC, Marrie R-A, El-Gabalawy H, de Kievit T, et al.
 A comparative study of the gut microbiota in immune-mediated inflammatory 
 diseases-does a common dysbiosis exist? Microbiome. 2018 Dec 13;6(1):221–221. 
 
-Flynn K, Ruffin MT IV, Turgeon K, Schloss PD. 
-Spatial Variation of the Native Colon Microbiota in Healthy Adults. 
-Cancer Prevention Research. 2018;11(7):393–402. 
+Baxter NT, Ruffin MT, Rogers MAM, Schloss PD. Microbiota-based model improves 
+the sensitivity of fecal immunochemical test for detecting colonic lesions. 
+Genome Medicine. 2016 Apr 6;8(1):37
 
 Martino C, Morton JT, Marotz CA, Thompson LR, Tripathi A, Knight R, et al. A 
 Novel Sparse Compositional Technique Reveals Microbial Perturbations. mSystems. 
