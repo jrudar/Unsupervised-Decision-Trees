@@ -4,6 +4,7 @@ Data to support our paper titled: "Decision Tree Ensembles Utilizing Multivariat
 https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
 
 # Create the Environment
+  `
   conda create -n TreeOrdFinal python=3.10
 
   # Activate the Environment
@@ -32,6 +33,7 @@ https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
   pip install statannotations==0.5
   pip install matplotlib==3.5.2
   pip install seaborn==0.11.2
+  `
 
 # Data Sources
 
