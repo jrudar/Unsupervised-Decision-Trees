@@ -50,3 +50,17 @@ Genome Medicine. 2016 Apr 6;8(1):37
 Martino C, Morton JT, Marotz CA, Thompson LR, Tripathi A, Knight R, et al. A 
 Novel Sparse Compositional Technique Reveals Microbial Perturbations. mSystems. 
 2019 Feb;4(1).
+
+Porter, T. M., & Hajibabaei, M. (2022). MetaWorks: A flexible, scalable bioinformatic 
+pipeline for high-throughput multi-marker biodiversity assessments. PLOS ONE, 
+17(9), e0274260. doi: 10.1371/journal.pone.0274260
+
+Wang, Q., Garrity, G. M., Tiedje, J. M., & Cole, J. R. (2007). Naive Bayesian 
+Classifier for Rapid Assignment of rRNA Sequences into the New Bacterial Taxonomy. 
+Applied and Environmental Microbiology, 73(16), 5261–5267. 
+doi:10.1128/AEM.00062-07
+
+Rudar, J., Porter, T.M., Wright, M., Golding G.B., Hajibabaei, M. LANDMark: an 
+ensemble approach to the supervised selection of biomarkers in high-throughput 
+sequencing data. BMC Bioinformatics 23, 110 (2022). 
+https://doi.org/10.1186/s12859-022-04631-z
