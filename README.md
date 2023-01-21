@@ -3,6 +3,15 @@
 Data and code to support our paper titled: "Decision Tree Ensembles Utilizing Multivariate Splits Are Effective at Investigating Beta-Diversity in Medically Relevant 16S Amplicon Sequencing Data"
 https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
 
+# Input
+    To run the code, you will need the following files produced by the MetaWorks (https://github.com/terrimporter/MetaWorks) pipeline: 
+        1) The ASV table (ESV.table)
+        2) The Taxonomic Ranks and Confidence Scores of Each ASV (rdp.out.tmp)
+        
+    In addition you will need the file containing the metadata.
+    
+    Also, please ensure that all paths are correct on your computer.        
+
 # Create the Environment
     conda create -n TreeOrdFinal python=3.10
 
