@@ -10,6 +10,8 @@ https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
         
     In addition you will need the file containing the metadata.
     
+    These files are provided in this repository.
+    
     Also, please ensure that all paths are correct on your computer.        
 
 # Create the Environment
