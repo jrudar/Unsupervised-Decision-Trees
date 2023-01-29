@@ -190,18 +190,6 @@ def get_classifer(
 
         result = get_result_model(model, X_tr, y, X_test_proj, y_te)
 
-   # elif pcoa_trf == 2:
-    #    X_tr = closure(X)
-     #   X_test_proj = closure(X_te)
-
-      #  result = get_result_model(model, X_tr, y, X_test_proj, y_te)
-
-    #elif pcoa_trf == 3:
-     #   X_tr = clr(multiplicative_replacement(closure(X)))
-      #  X_test_proj = clr(multiplicative_replacement(closure(X_te)))
-
-       # result = get_result_model(model, X_tr, y, X_test_proj, y_te)
-
     return transform_type, comp_type, model_type, metric, result
 
 
