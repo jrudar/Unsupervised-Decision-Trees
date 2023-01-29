@@ -26,10 +26,11 @@ from skbio.stats import subsample_counts
 from skbio.stats.composition import multiplicative_replacement, closure, clr
 
 from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold
-from sklearn.metrics import pairwise_distances, balanced_accuracy_score
+from sklearn.metrics import pairwise_distances, balanced_accuracy_score, roc_auc_score
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.utils import shuffle
-from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
+from sklearn.dummy import DummyClassifier
 
 import seaborn as sns
 
