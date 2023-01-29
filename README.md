@@ -14,6 +14,39 @@ https://www.biorxiv.org/content/10.1101/2022.03.31.486647v2
     
     Also, please ensure that all paths are correct on your computer.        
 
+# Files
+    control_get_data.py:
+        Description: Creates synthetic data and analyzes the results (Martino et al. 2019).
+        
+        Section 'run_exp': Calculates balanced accuracy scores and PerMANOVA results for each experiment.
+        Section 'get_stats_perm': Plots the PerMANOVA results
+        Section 'get_stats_bacc': Plots the Balanced Accuracy Score Results
+        
+    diseased_gut_data.py:
+        Description: Runs the experiment using the Crohn's Disease Data (Forbes et al. 2018).
+        
+        Section 'large_test': Calculates balanced accuracy scores and PerMANOVA results for each experiment
+        Section 'feature_importance_test': Creates a TreeOrdination projection and calculates feature importance scores
+        Section 'get_stats_perm': Plots the PerMANOVA results
+        Section 'get_stats_bacc': Plots the Balanced Accuracy Score Results    
+        
+    baxter_data.py:
+        Description: Calculates ROC-AUC scores and Balanced Accuracy Scores using the Baxter et al. (2016) Data
+        
+    baxter_data_fi.py:
+        Description: Runs the experiment using the Baxter et al. (2016) data which calculates the sensitivity,
+                     specificity, for the Normal vs. Cancer and Normal vs. Lesion comparisons. Calculates
+                     Shapley scores.
+                     
+        Section 'get_stats': Plots ROC-AUC and Balanced Accuracy Scores
+        Section 'normal_v_cancer': Calculates and saves CSV file of probability of cancer for each sample
+        Section 'normal_v_cancer_stat': Calculates discrimination threshold, sensitivty, and specificity for
+                                        the "normal_v_cancer" comparison
+        Section 'normal_v_lesion': Calculates and saves CSV file of probability of lesion for each sample
+        Section 'normal_v_lesion_stat': Calculates discrimination threshold, sensitivty, and specificity for
+                                        the "normal_v_lesion" comparison
+        Section 'get_fi_scores': Creates an TreeOrdination projection and calculates feature importance scores
+
 # Create the Environment
     conda create -n TreeOrdFinal python=3.10
 
