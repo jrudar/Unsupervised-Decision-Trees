@@ -2,83 +2,53 @@
 # coding: utf-8
 
 from __future__ import division
+
 # utils
 import pandas as pd
 import numpy as np
 from collections import Counter
+
 # blocks
 from scipy.stats import norm
 from numpy.random import poisson, lognormal
 from skbio.stats.composition import closure
 from scipy.special import kl_div
 from scipy.stats import entropy
+
 # minimize model perams
-from sklearn.metrics import mean_squared_error, balanced_accuracy_score, roc_auc_score
+from sklearn.metrics import mean_squared_error, balanced_accuracy_score
 from scipy.optimize import minimize
 
-# Import NumPy and Pandas
-import numpy as np
-import pandas as pd
-
-#Import relevant libraries
+# Import relevant libraries
 from skbio.stats.distance import permanova, DistanceMatrix
 from skbio.stats.ordination import pcoa
+from skbio.stats import subsample_counts
 from skbio.stats.composition import multiplicative_replacement, closure, clr
-
-from scipy.spatial import procrustes
 
 from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold
 from sklearn.metrics import pairwise_distances, balanced_accuracy_score
-from sklearn.utils import resample, shuffle
-from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
-from sklearn.dummy import DummyClassifier
-from sklearn.decomposition import PCA
-
-import umap as um
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.utils import shuffle
+from sklearn.ensemble import ExtraTreesClassifier
 
 import seaborn as sns
 
 import matplotlib.pyplot as plt
 
+# For printing graphs
+from itertools import combinations
+from statannotations.Annotator import Annotator
+
 from LANDMark import LANDMarkClassifier
 from TreeOrdination import TreeOrdination
 
+# For RCLR and RPCA
 from deicode.preprocessing import rclr
 from deicode.matrix_completion import MatrixCompletion
 
 from numpy.random import RandomState
 
 from umap import UMAP
-
-from numpy import __version__
-print("numpy", __version__)
-
-from pandas import __version__
-print("pandas", __version__)
-
-from skbio import __version__
-print("skbio", __version__)
-
-from scipy import __version__
-print("scipy", __version__)
-
-from sklearn import __version__
-print("sklearn", __version__)
-
-from umap import __version__
-print("umap", __version__)
-
-from seaborn import __version__
-print("seaborn", __version__)
-
-from matplotlib import __version__
-print("matplotlib", __version__)
-
-from deicode import __version__
-print("deicode", __version__)
-
-from shap import __version__
-print("shap", __version__)
 
 #Function for rarefaction
 #https://stackoverflow.com/questions/15507993/quickly-rarefy-a-matrix-in-numpy-python
@@ -187,79 +157,7 @@ if __name__ == "__main__":
 
     #Feature names
     cluster_names = X_features
-    
-    """
-        #Functions for calculating PerMANOVA and Generalization Performance
-        def get_result_model(model, X_tr, y_tr, X_te, y_te):
-            #Fit the model
-            model = model.fit(X_tr, y_tr)
 
-            #Predict class labels
-            pred_tests = model.predict(X_te)
-
-            #Return BACC
-            ba_tests = balanced_accuracy_score(y_te, pred_tests)
-
-            return ba_tests
-
-        def get_result_permanova(X, y, n_rep = 999):
-            pmanova = permanova(X, y, permutations = n_rep)
-
-            pseudo_f, pval = pmanova.values[4:6]
-            R2 = 1 - 1 / (1 + pmanova.values[4] * pmanova.values[4] / (pmanova.values[2] - pmanova.values[3] - 1))
-
-            return pseudo_f, pval, R2
-
-        def get_perm(X, y, metric, transform_type, comp_type, pcoa_trf, n_neighbors = 15):
-
-            if pcoa_trf == 0:
-                D = DistanceMatrix(pairwise_distances(X, metric = metric).astype(np.float32))
-
-            elif pcoa_trf == 1:
-                D = pcoa(DistanceMatrix(pairwise_distances(X, 
-                                                            metric = metric).astype(np.float32)),
-                            number_of_dimensions = 2).samples.values
-
-                D = DistanceMatrix(pairwise_distances(D, metric = "euclidean").astype(np.float32))
-
-            elif pcoa_trf == 2:
-                D = UMAP(n_components = 2, min_dist = 0.001, metric = metric, n_neighbors = n_neighbors).fit_transform(X)
-
-                D = DistanceMatrix(pairwise_distances(D, metric = "euclidean").astype(np.float32))
-
-            elif pcoa_trf == 3:
-                D = DistanceMatrix(X)
-
-            per_result = get_result_permanova(D, y)
-
-            return transform_type, comp_type, metric, per_result[0], per_result[1], per_result[2]
-
-        def get_classifer(X, y, X_te, y_te, metric, model, transform_type, comp_type, model_type, pcoa_trf, n_neighbors = 15):
-
-            if pcoa_trf == 0:
-                result = get_result_model(model, X, y, X_te, y_te)
-
-            elif pcoa_trf == 1:
-                X_trf = UMAP(n_components = 2, min_dist = 0.001, metric = metric, n_neighbors = n_neighbors).fit(X)
-                X_tr = X_trf.transform(X)
-                X_test_proj = X_trf.transform(X_te)
-
-                result = get_result_model(model, X_tr, y, X_test_proj, y_te)
-
-            elif pcoa_trf == 2:
-                X_tr = closure(X)
-                X_test_proj = closure(X_te)
-
-                result = get_result_model(model, X_tr, y, X_test_proj, y_te)
-
-            elif pcoa_trf == 3:
-                X_tr = clr(multiplicative_replacement(closure(X)))
-                X_test_proj = clr(multiplicative_replacement(closure(X_te)))
-
-                result = get_result_model(model, X_tr, y, X_test_proj, y_te)
-
-            return transform_type, comp_type, model_type, metric, result
-        """
     dataset_types = ["Without_Fit", "With_Fit"]
     datasets = [X_signal, X_signal_fit]
     comp_types = ["Normal_v_Cancer", "Normal_v_Lesion", "Adenoma_v_Cancer"]
